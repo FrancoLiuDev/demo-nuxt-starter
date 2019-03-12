@@ -1,0 +1,64 @@
+<template>
+  <section class="container">
+    <div>
+      <div id="fb-root"></div>
+      <div class="fb-customerchat" attribution="setup_tool" page_id="146864302897352"></div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  components: {},
+  mounted() {
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml: true,
+        version: "v3.2"
+      });
+    };
+    (function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+  }
+};
+</script>
+
+<style>
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
+}
+
+.links {
+  padding-top: 15px;
+}
+</style>
