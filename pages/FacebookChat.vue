@@ -1,12 +1,11 @@
 <template>
   <section class="container">
-    <div v-show="page_id">
+    <div v-if="page_id">
       <div id="fb-root"></div>
-      <div   class="fb-customerchat" attribution="setup_tool" :page_id="page_id"></div>
-    
+      <div class="fb-customerchat" attribution="setup_tool" :page_id="page_id"></div>
     </div>
-      <button class="bt-small" v-on:click="page_id = '652002691936819'">6520</button>
-      <button class="bt-small" v-on:click="page_id = '146864302897352'">1468</button>
+    <button class="bt-small" v-on:click="page_id = '652002691936819'">6520</button>
+    <button class="bt-small" v-on:click="page_id = '146864302897352'">1468</button>
   </section>
 </template>
 
@@ -20,26 +19,25 @@ export default {
   watch: {
     page_id: function type(page_id) {
       console.log("page_id", page_id);
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml: true,
+          version: "v3.2"
+        });
+      };
+      (function(d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
     }
   },
   components: {},
-  mounted() {
-    window.fbAsyncInit = function() {
-      FB.init({
-        xfbml: true,
-        version: "v3.2"
-      });
-    };
-    (function(d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "facebook-jssdk");
-  }
+  mounted() {}
 };
 </script>
 
