@@ -3,9 +3,10 @@
     <div v-if="page_id">
       <div id="fb-root"></div>
       <div   class="fb-customerchat" attribution="setup_tool" :page_id="page_id"></div>
+    
+    </div>
       <button class="bt-small" v-on:click="page_id = '652002691936819'">6520</button>
       <button class="bt-small" v-on:click="page_id = '146864302897352'">1468</button>
-    </div>
   </section>
 </template>
 
