@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <div v-if="page_id">
+    <div v-show="page_id">
       <div id="fb-root"></div>
       <div   class="fb-customerchat" attribution="setup_tool" :page_id="page_id"></div>
     
