@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      page_id: ""
+      page_id: "652002691936819"
     };
   },
   watch: {
