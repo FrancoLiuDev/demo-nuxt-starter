@@ -2,13 +2,25 @@
   <section class="container">
     <div>
       <div id="fb-root"></div>
-      <div class="fb-customerchat" attribution="setup_tool" page_id="146864302897352"></div>
+      <div class="fb-customerchat" attribution="setup_tool" :page_id="page_id"></div>
+      <button class="bt-small" v-on:click="page_id = '652002691936819'">6520</button>
+      <button class="bt-small" v-on:click="page_id = '146864302897352'">1468</button>
     </div>
   </section>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      page_id: ""
+    };
+  },
+  watch: {
+    page_id: function type(page_id) {
+      console.log("page_id", page_id);
+    }
+  },
   components: {},
   mounted() {
     window.fbAsyncInit = function() {
