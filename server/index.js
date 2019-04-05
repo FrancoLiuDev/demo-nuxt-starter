@@ -35,12 +35,12 @@ async function start() {
     badge: true
   })
     
-  const options = {
-    key: fs.readFileSync('ssl/privateKey.key'),
-    cert: fs.readFileSync('ssl/cer.pem'),
-    ca: [fs.readFileSync('ssl/ca.pem')]
-  }
-  https.createServer(options, app).listen(443)
+  // const options = {
+  //   key: fs.readFileSync('ssl/privateKey.key'),
+  //   cert: fs.readFileSync('ssl/cer.pem'),
+  //   ca: [fs.readFileSync('ssl/ca.pem')]
+  // }
+  // https.createServer(options, app).listen(443)
 
 }
 start()
